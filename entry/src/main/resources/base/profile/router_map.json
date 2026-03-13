@@ -1,0 +1,14 @@
+{
+  "routerMap" : [
+    {
+      "name" : "Start",
+      "pageSourceFile"  : "src/main/ets/pages/Start.ets",
+      "buildFunction" : "StartBuilder"
+    },
+    {
+      "name" : "Layout",
+      "pageSourceFile"  : "src/main/ets/pages/Layout.ets",
+      "buildFunction" : "LayoutBuilder"
+    }
+  ]
+}
