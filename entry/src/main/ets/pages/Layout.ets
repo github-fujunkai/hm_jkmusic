@@ -1,3 +1,8 @@
+import { Component } from "@kit.TestKit";
+import { Find } from "./Find";
+import { Mine } from "./Mine";
+import { Moment } from "./Moment";
+import { Recommend } from "./Recommend";
 
 @Builder
 export function LayoutBuilder() {
@@ -41,8 +46,16 @@ export struct Layout {
       Tabs({barPosition:BarPosition.End}) {
         ForEach(this.tabData, (item: TabClass, index) => {
           TabContent() {
-            Text(item.text)
-              .fontColor('#ffffff')
+            if (this.currentIndex === 0) {
+              Recommend()
+            }else if(this.currentIndex === 1) {
+              Find()
+            }else if(this.currentIndex === 2) {
+              Moment()
+            }else if(this.currentIndex === 3) {
+              Mine()
+            }
+
           }
           .tabBar(this.TabBuilder(item,index)) // tabBar这里菜单比较基础，用@Builder自定义菜单
           .backgroundColor('#131215')
