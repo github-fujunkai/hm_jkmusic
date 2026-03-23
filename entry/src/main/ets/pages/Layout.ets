@@ -3,6 +3,7 @@ import { Find } from "./Find";
 import { Mine } from "./Mine";
 import { Moment } from "./Moment";
 import { Recommend } from "./Recommend";
+import { AppStorageV2 } from "@kit.ArkUI";
 
 @Builder
 export function LayoutBuilder() {
@@ -20,8 +21,11 @@ interface TabClass {
 
 @ComponentV2
 export struct Layout {
+  // navPathStack: NavPathStack = new NavPathStack();
+  //AppStorageV2是提供状态变量在应用级全局共享的能力，开发者可以通过connect绑定同一个key，进行跨ability的数据共享。
+  navPathStack: NavPathStack = AppStorageV2.connect(NavPathStack,'navStack',()=>new NavPathStack())!
+
   @Local currentIndex: number = 0
-  navPathStack: NavPathStack = new NavPathStack();
   tabData: TabClass[] = [
     {text: '推荐', icon: $r('app.media.ic_recommend')},
     {text: '发现', icon: $r('app.media.ic_find')},

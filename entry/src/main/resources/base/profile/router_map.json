@@ -9,6 +9,11 @@
       "name" : "Layout",
       "pageSourceFile"  : "src/main/ets/pages/Layout.ets",
       "buildFunction" : "LayoutBuilder"
+    },
+    {
+      "name" : "Play",
+      "pageSourceFile"  : "src/main/ets/pages/Play.ets",
+      "buildFunction" : "PlayBuilder"
     }
   ]
 }
